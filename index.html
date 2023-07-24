@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <title>js-sketch: not ms-paint</title>
 </head>
 <body>
-    <button onclick="newGrid()">New Grid</button>
-    <div id="container">
-
+    <header>
+        <h1>js-sketch</h1>
+    </header>
+    <div id="mainContainer">
+        <div id="gridSettings">
+            <button onclick="resetGrid()">reset</button>
+            <button onclick="newGrid()">resize</button>
+          </div>
+          <div id="container">
+          </div>
+         <div id="brushSettings">
+          <button onclick="setBrush('pen')">pen</button>
+          <button onclick="setBrush('random')">random</button>
+          <button onclick="setBrush('darken')">darken</button>
+         </div> 
     </div>
 </body>
 </html>

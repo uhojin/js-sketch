@@ -1,22 +1,37 @@
+:root {
+    --container-width: 362px;
+    --container-height: 362px;
+    --gap-size: 1px;
+    --side-length: 16;
+    --square-size: calc((var(--container-width) + var(--gap-size)) / var(--side-length) - var(--gap-size));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Code', monospace;
+}
+
 body {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .square {
-    width: 16px;
-    height: 16px;
+    width: var(--square-size);
+    height: var(--square-size);
     transition: all .2s ease;
     background-color: white;
-    /* border: solid 1px black; */
 }
 
 
-.filled {
+
+/* .filled {
     background-color: black;
-}
+} */
 
 button {
     margin: 1em;
@@ -28,21 +43,48 @@ button {
     transition: all .2s ease-out;
 }
 
-button:hover {
+button:hover, button:focus, button:active {
     background-color: black;
     color: white;
 }
 
 #container {
-    width: 362px;
-    height: 362px;
+    width: var(--container-width);
+    height: var(--container-height);
     margin: 0 auto;
-    /* display: grid; */
     display: flex;
     border: solid 1px black;
     flex-wrap: wrap;
-    gap: 1px;
-    /* grid-gap: 1px; */
-    /* grid-template-columns: repeat(auto-fit, 20px); */
+    gap: var(--gap-size);
     background-color: black;
+    /* padding: 1px; */
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+#gridSettings, #brushSettings {
+    display: flex;
+    justify-content: space-between;
+}
+/* 
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+button.active {
+    background-color: black;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    font-weight: bold;
+    border-bottom: #333 1rem solid;
+    background-color: lightcoral;
+    margin: 0;
+    font-size: 1.5rem;
+    width: 100%;
+    color: #333;
+    
 }
